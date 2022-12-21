@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://lbv0i0ecfjgh"]
+
+[ext_resource type="Script" path="res://2d/coffee_spawner/coffee_spawner.gd" id="1_b5kku"]
+
+[sub_resource type="Curve2D" id="Curve2D_ndxi2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 854, 1, 0, 0, 0, 0, 655, 5)
+}
+point_count = 2
+
+[node name="CoffeeSpawner" type="Node2D"]
+script = ExtResource("1_b5kku")
+
+[node name="SpawnPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ndxi2")
+
+[node name="SpawnPathFollow" type="PathFollow2D" parent="SpawnPath"]
+position = Vector2(681, -1)
+rotation = 3.13607

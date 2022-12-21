@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=3 uid="uid://pak8oeana71u"]
+
+[ext_resource type="Theme" uid="uid://bwgfg4bdqt67c" path="res://assets/theme.tres" id="1_dlyoq"]
+[ext_resource type="Script" path="res://ui/ui.gd" id="1_l4x05"]
+[ext_resource type="Script" path="res://ui/retry_button.gd" id="3_3bhqa"]
+[ext_resource type="Script" path="res://ui/retry.gd" id="3_icsd7"]
+[ext_resource type="Script" path="res://ui/death_label.gd" id="4_7enx7"]
+[ext_resource type="Script" path="res://ui/quit_button.gd" id="5_f022g"]
+[ext_resource type="Script" path="res://ui/coffee_button.gd" id="7_vl2c2"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_dlyoq")
+script = ExtResource("1_l4x05")
+
+[node name="Container" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 23.0
+offset_right = 257.0
+offset_bottom = 77.0
+
+[node name="Energy" type="ProgressBar" parent="Container"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+offset_right = 234.0
+offset_bottom = 10.0
+show_percentage = false
+
+[node name="Score" type="Label" parent="Container"]
+layout_mode = 2
+offset_top = 14.0
+offset_right = 234.0
+offset_bottom = 33.0
+horizontal_alignment = 1
+
+[node name="COFEBUTON" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -203.0
+offset_top = 33.0
+offset_right = -54.0
+offset_bottom = 52.0
+grow_horizontal = 0
+focus_mode = 0
+text = "Cofe | 2 Score"
+script = ExtResource("7_vl2c2")
+
+[node name="Retry" type="ColorRect" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.239216, 0.239216, 0.239216, 0.74902)
+script = ExtResource("3_icsd7")
+
+[node name="Label" type="Label" parent="Retry"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.0
+offset_top = 104.0
+offset_right = 61.0
+offset_bottom = 127.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 75
+text = "Edd died of caffeine overdose"
+script = ExtResource("4_7enx7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Retry"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.5
+offset_top = -21.0
+offset_right = 81.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Button" type="Button" parent="Retry/VBoxContainer"]
+layout_mode = 2
+offset_right = 163.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+text = "Retry"
+script = ExtResource("3_3bhqa")
+
+[node name="Button2" type="Button" parent="Retry/VBoxContainer"]
+layout_mode = 2
+offset_top = 69.0
+offset_right = 163.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+text = "The Intelligence Button"
+script = ExtResource("5_f022g")
+
+[connection signal="pressed" from="COFEBUTON" to="COFEBUTON" method="_on_pressed"]
+[connection signal="pressed" from="Retry/VBoxContainer/Button" to="Retry/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="Retry/VBoxContainer/Button2" to="Retry/VBoxContainer/Button2" method="_on_pressed"]

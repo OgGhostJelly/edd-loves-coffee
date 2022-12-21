@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://codo86mgoypju"]
+
+[ext_resource type="AudioStream" uid="uid://ctkfublq3uycw" path="res://assets/deathofedd.mp3" id="1_kgyj8"]
+[ext_resource type="Script" path="res://atld/global_audio.gd" id="2_384pm"]
+
+[node name="GlobalAudio" type="AudioStreamPlayer"]
+stream = ExtResource("1_kgyj8")
+autoplay = true
+script = ExtResource("2_384pm")

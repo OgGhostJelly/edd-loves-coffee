@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2qjuy8uhcu5h"]
+
+[ext_resource type="PackedScene" uid="uid://pak8oeana71u" path="res://ui/ui.tscn" id="1_01pra"]
+[ext_resource type="Texture2D" uid="uid://cdg3wqqquvw7y" path="res://assets/bg.png" id="1_vallf"]
+[ext_resource type="PackedScene" uid="uid://b5jmc11c3wk72" path="res://2d/2d.tscn" id="2_nfxo4"]
+[ext_resource type="Texture2D" uid="uid://kv6u8hefu20l" path="res://assets/table.png" id="4_s5xev"]
+
+[node name="Main" type="Node"]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_vallf")
+
+[node name="2D" parent="." instance=ExtResource("2_nfxo4")]
+
+[node name="Table" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_s5xev")
+
+[node name="UI" parent="." instance=ExtResource("1_01pra")]

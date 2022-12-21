@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3wulab6jvaht"]
+
+[ext_resource type="Script" path="res://2d/coffee/coffee.gd" id="1_xrkl8"]
+[ext_resource type="Texture2D" uid="uid://bcyh2dn0v2sbt" path="res://assets/coffee.png" id="2_67c6q"]
+
+[node name="Coffee" type="RigidBody2D" groups=["draggables", "drinks"]]
+input_pickable = true
+script = ExtResource("1_xrkl8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_67c6q")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-63, 61, -45, 66, -3, 66, 25, 55, 25, 45, 37, 44, 52, 37, 64, 25, 69, 11, 70, -7, 60, -22, 45, -33, 34, -33, 23, -29, 23, -42, 13, -49, -17, -55, -32, -55, -51, -53, -61, -49)

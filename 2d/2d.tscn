@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5jmc11c3wk72"]
+
+[ext_resource type="PackedScene" uid="uid://lbv0i0ecfjgh" path="res://2d/coffee_spawner/coffee_spawner.tscn" id="1_0lppb"]
+[ext_resource type="PackedScene" uid="uid://csmc6dvl7kh0r" path="res://2d/edd/edd.tscn" id="1_lut84"]
+
+[node name="2D" type="Node2D"]
+
+[node name="Edd" parent="." instance=ExtResource("1_lut84")]
+position = Vector2(168, 321)
+frames = null
+
+[node name="CoffeeSpawner" parent="." instance=ExtResource("1_0lppb")]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(621, 603)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+polygon = PackedVector2Array(-622, -108, -595, -111, -552, -108, -436, -114, -286, -117, -253, -117, -242, -120, -226, -119, -219, -117, -162, -118, -149, -114, -106, -113, 52, -107, 99, -104, 235, -121, 254, -116, 267, -116, 270, -108, 261, -84, 257, -41, 258, 44, -622, 44)
